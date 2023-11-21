@@ -1,0 +1,29 @@
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    margin-top: 2%;
+}
+.form__content{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    background-color: white;
+    padding: 3%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.form__content__header{
+    text-align: center;
+}
+.form__content label{
+    font-weight: bold;
+}
+.form__content input,
+.form__content select {
+    height: 36px;
+}
+
+
+

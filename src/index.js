@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Employees from './pages/Employees';
+import './style/index.css'
 
 import reportWebVitals from './reportWebVitals';
 

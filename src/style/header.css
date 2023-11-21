@@ -1,0 +1,16 @@
+.header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 8%;
+    background-color: #006400 ;
+    gap: 6%;
+}
+.header__logo{
+    color: white;
+    font-size: 25px;
+}
+.header__links{
+    color: white;
+    font-size: 18px;
+}
