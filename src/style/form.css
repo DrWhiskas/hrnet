@@ -11,7 +11,7 @@
     flex-direction: column;
     width: 25%;
     background-color: white;
-    padding: 3%;
+    padding: 2%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .form__content__header{
@@ -21,9 +21,12 @@
     font-weight: bold;
 }
 .form__content input,
-.form__content select {
+.form__content select{
     height: 36px;
 }
-
+.form .button{
+    place-self: center;
+    margin-top: 5%;
+}
 
 
