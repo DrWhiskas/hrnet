@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../style/form.css';
 import  statesData from'../media/states.js'
+import Modal from './Modal.jsx';
 
 export default function Form() {
 	const [formData, setFormData] = useState({
@@ -14,17 +15,33 @@ export default function Form() {
 		zipCode: '',
 		department: '',
 	});
+	const [isModalOpen, setIsModalOpen] = useState(0)
+
+	function closeModal(){
+		setIsModalOpen(false)
+	}
+	function openModal(){
+		setIsModalOpen(true)
+	}
+
+	function handleSubmit(e){
+		e.preventDefault()
+		
+		const isFormValid = Object.values(formData).every(
+			(value) => value.trim() !== ''
+		);
+		if(isFormValid){
+			openModal()
+		}else{
+			alert('Pas remplis')
+		}          
 
 
-    function handleSubmit(){
-        const isFormValid = Object.values(formData).every(
-					(value) => value.trim() !== ''
-				);
-                console.log(isFormValid);
-    }
+	}
+
 	return (
 		<section className="form">
-			<form className="form__content" onSubmit={handleSubmit}>
+			<form className="form__content" onSubmit={handleSubmit} >
 				<h2 className="form__content__header">Create</h2>
 				<label htmlFor="firstName">Firstname</label>
 				<input
@@ -88,7 +105,7 @@ export default function Form() {
 					value={formData.state}
 					onChange={(e) => setFormData({ ...formData, state: e.target.value })}
 				>
-                    <option value=''>State</option>
+                    <option value=''></option>
                     {statesData.map((state, index) =>(
                         <option key={index}>{state.name}</option>
                     ))}
@@ -113,16 +130,23 @@ export default function Form() {
 						setFormData({ ...formData, department: e.target.value })
 					}
 				>
+					<option value=''></option>
 					<option>Sales</option>
 					<option>Marketing</option>
 					<option>Engineering</option>
 					<option>Human Resources</option>
 					<option>Legal</option>
 				</select>
-				<button type="submit" className="button">
+				<button type='submit' className="button">
 					Save
 				</button>
 			</form>
+			{isModalOpen && (
+				<Modal
+					closeModal={closeModal}
+					messageModal='Employee Created !'
+				/>
+			)}
 		</section>
 	);
 }
