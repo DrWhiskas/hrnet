@@ -6,8 +6,6 @@ import '../style/table.css'
 
 export default function Table(){
 	
-	const [search, setSearch] = useState('');
-
 	const employeeData = useSelector((state) => state.employee.employee)
 	const data = React.useMemo(() => employeeData, [employeeData]);
 	const columns = React.useMemo(

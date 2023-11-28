@@ -15,6 +15,6 @@
 }
 .employees__main__title{
     padding: 0;
+    font-weight: bolder;
     margin-bottom: 2%;
-    position: fixed;
 }

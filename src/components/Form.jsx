@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addEmployee } from '../features/store.js';
 import '../style/form.css';
 import  statesData from'../media/states.js'
-import Modal from './Modal.jsx';
-
+import { Modal } from 'modal-kayvon';
 export default function Form() {
 	
 	const dispatch = useDispatch()
