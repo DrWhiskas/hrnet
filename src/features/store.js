@@ -3,8 +3,8 @@ import states from "../media/states";
 
 const initialState = {
     user: null,
-    employee: [], // liste des employé
-    token: '' // token de chaque employé
+    employee: [], // liste des employés
+    token: '' // token de chaque employés
 }
 
 const employeeSlice = createSlice({
