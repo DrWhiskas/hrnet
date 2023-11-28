@@ -1,0 +1,24 @@
+
+table{
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.24) 4px 0px 14px;
+}
+
+thead{
+    background-color: #006400;
+    color: white;
+}
+td:hover{
+    background-color: darkgray;
+    color: white;
+    font-weight: bolder;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #CDFFB8;
+}
+

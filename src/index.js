@@ -7,15 +7,22 @@ import './style/index.css'
 
 import reportWebVitals from './reportWebVitals';
 
+// REDUX IMPORT
+import { Provider } from 'react-redux';
+import store from './features/store';
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/employees" element={<Employees />} />
-			</Routes>
-		</BrowserRouter>
+		<Provider store={store}>
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/employees" element={<Employees />} />
+				</Routes>
+			</BrowserRouter>
+		</Provider>
 	</React.StrictMode>
 );
 

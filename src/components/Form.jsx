@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addEmployee } from '../features/store.js';
 import '../style/form.css';
 import  statesData from'../media/states.js'
 import Modal from './Modal.jsx';
 
 export default function Form() {
+	
+	const dispatch = useDispatch()
+	const newData = useSelector((state) => state.employee)
+
+
 	const [formData, setFormData] = useState({
 		firstName: '',
 		lastName: '',
@@ -15,7 +22,7 @@ export default function Form() {
 		zipCode: '',
 		department: '',
 	});
-	const [isModalOpen, setIsModalOpen] = useState(0)
+	const [isModalOpen, setIsModalOpen] = useState(false)
 
 	function closeModal(){
 		setIsModalOpen(false)
@@ -31,13 +38,14 @@ export default function Form() {
 			(value) => value.trim() !== ''
 		);
 		if(isFormValid){
+			dispatch(addEmployee(formData));
 			openModal()
 		}else{
 			alert('Pas remplis')
 		}          
-
-
 	}
+	console.log(newData);
+
 
 	return (
 		<section className="form">

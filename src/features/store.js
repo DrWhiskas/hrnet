@@ -13,11 +13,14 @@ const employeeSlice = createSlice({
     reducers: {
         setToken: (state, action) =>{
             state.token = action.payload;
+        },
+        addEmployee: (state, action) =>{
+            state.employee.push(action.payload)
         }
     }
 })
 
-export const { setToken } = employeeSlice.actions
+export const { setToken, addEmployee } = employeeSlice.actions;
 
 export const store = configureStore({
     reducer: { employee: employeeSlice.reducer}, 
