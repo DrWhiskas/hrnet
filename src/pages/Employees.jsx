@@ -4,13 +4,13 @@ import Table from "../components/Table";
 import '../style/employees.css'
 export default function Employees(){
     return(
-        <>
+        <div className="employees">
         <Header />
-            <section  className="employees">
-                <h1 className="employees__title"> Current Employees</h1>
+            <section  className="employees__main">
+                <h1 className="employees__main__title"> Current Employees</h1>
             <Table />
 
             </section>
-        </>
+        </div>
     )
 }

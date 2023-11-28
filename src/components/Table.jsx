@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { useSelector } from 'react-redux';
-import { useTable, useSortBy } from "react-table";
+import { useTable, useSortBy, useGlobalFilter } from "react-table";
+import GlobalFilter from "./GlobalFilter";
 import '../style/table.css'
 
 export default function Table(){
+	
+	const [search, setSearch] = useState('');
+
 	const employeeData = useSelector((state) => state.employee.employee)
 	const data = React.useMemo(() => employeeData, [employeeData]);
 	const columns = React.useMemo(
@@ -56,12 +60,14 @@ export default function Table(){
 		],
 		[]
 	);
-	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-		useTable({ columns, data }, useSortBy);
+	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, state, setGlobalFilter } =
+		useTable({ columns, data }, useGlobalFilter, useSortBy);
+
+		const {globalFilter} = state
     return (
 			<div className="table">
-				<input type="text" name="oui" id="" />
 				<div className="table__containers">
+					<GlobalFilter filter={globalFilter} setFilter= {setGlobalFilter} />
 					<table {...getTableProps()}>
 						<thead>
 							{headerGroups.map((headerGroup) => (
