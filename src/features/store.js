@@ -2,7 +2,6 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 import states from "../media/states";
 
 const initialState = {
-    user: null,
     employee: [], // liste des employés
     token: '' // token de chaque employés
 }
