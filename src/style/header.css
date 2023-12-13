@@ -13,4 +13,9 @@
 .header__links{
     color: white;
     font-size: 18px;
+    font-weight: bold;
+    transition: all ease-in-out .3s;
+}
+.header__links:hover{
+    transform: scale(1.05);
 }

@@ -1,9 +1,8 @@
 import React from "react";
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../style/header.css'
 
 export default function Header(){
-    const location = useLocation()
 
     return (
 			<nav className="header">
